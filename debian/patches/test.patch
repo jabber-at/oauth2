@@ -1,0 +1,71 @@
+diff --git a/debian/.gitignore b/debian/.gitignore
+deleted file mode 100644
+index 1377554..0000000
+diff --git a/debian/changelog b/debian/changelog
+deleted file mode 100644
+index 690d497..0000000
+diff --git a/debian/compat b/debian/compat
+deleted file mode 100644
+index ec63514..0000000
+diff --git a/debian/control b/debian/control
+deleted file mode 100644
+index b8ef94e..0000000
+diff --git a/debian/copyright b/debian/copyright
+deleted file mode 100644
+index 31210d2..0000000
+diff --git a/debian/dh-rebar.conf b/debian/dh-rebar.conf
+deleted file mode 100644
+index c4a943e..0000000
+diff --git a/debian/gbp.conf b/debian/gbp.conf
+deleted file mode 100644
+index add1073..0000000
+diff --git a/debian/rules b/debian/rules
+deleted file mode 100755
+index fc19299..0000000
+diff --git a/debian/source/format b/debian/source/format
+deleted file mode 100644
+index 163aaf8..0000000
+diff --git a/debian/source/lintian-overrides b/debian/source/lintian-overrides
+deleted file mode 100644
+index b5d22bf..0000000
+diff --git a/src/oauth2.erl b/src/oauth2.erl
+index f1651d7..b3659fa 100644
+--- a/src/oauth2.erl
++++ b/src/oauth2.erl
+@@ -135,7 +135,7 @@ authorize_client_credentials(Client, Scope0, Ctx0) ->
+     case auth_client(Client, no_redir, Ctx0) of
+         {error, _}      -> {error, invalid_client};
+         {ok, {Ctx1, C}} ->
+-            case ?BACKEND:verify_client_scope(C, Scope0, Ctx1) of
++            case ?BACKEND:verify_client_scope(Client, Scope0, Ctx1) of
+                 {error, _}           -> {error, invalid_scope};
+                 {ok, {Ctx2, Scope1}} ->
+                     {ok, {Ctx2, #a{ client=C
+diff --git a/src/oauth2_response.erl b/src/oauth2_response.erl
+index 84aeb89..4980a21 100644
+--- a/src/oauth2_response.erl
++++ b/src/oauth2_response.erl
+@@ -171,7 +171,7 @@ to_proplist(Response) ->
+     response_foldr(Response, fun(Key, Value, Acc) -> [{Key, Value} | Acc] end, []).
+ 
+ -ifndef(pre17).
+--spec to_map(response()) -> #{binary() => any()}.
++-spec to_map(response()) -> map(binary(), any()).
+ to_map(Response) ->
+     response_foldr(Response, fun(Key, Value, Acc) -> maps:put(Key, Value, Acc) end, maps:new()).
+ -endif.
+diff --git a/test/oauth2_mock_backend.erl b/test/oauth2_mock_backend.erl
+index bd06845..525d829 100644
+--- a/test/oauth2_mock_backend.erl
++++ b/test/oauth2_mock_backend.erl
+@@ -118,8 +118,8 @@ get_redirection_uri(_, _)                 -> {error, notfound}.
+ verify_redirection_uri({client, 4711}, ?CLIENT_URI, Ctx) -> {ok, Ctx};
+ verify_redirection_uri(_, _, _)                          -> {error, mismatch}.
+ 
+-verify_client_scope({client, 4711}, [], Ctx)      -> {ok, {Ctx, []}};
+-verify_client_scope({client, 4711}, ?CSCOPE, Ctx) -> {ok, {Ctx, ?CSCOPE}};
++verify_client_scope({?CID, ?SECRET}, [], Ctx)      -> {ok, {Ctx, []}};
++verify_client_scope({?CID, ?SECRET}, ?CSCOPE, Ctx) -> {ok, {Ctx, ?CSCOPE}};
+ verify_client_scope(_, _, _)                       -> {error, invalid_scope}.
+ 
+ verify_resowner_scope({user, 31337}, ?USCOPE, Ctx) -> {ok, {Ctx, ?USCOPE}};
