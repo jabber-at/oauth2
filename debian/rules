@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+CFLAGS:= $(shell dpkg-buildflags --get CFLAGS) $(CPPFLAGS)
+CFLAGS += -fsigned-char
+CXXFLAGS:= $(shell dpkg-buildflags --get CXXFLAGS) $(CPPFLAGS)
+CXXFLAGS += -fsigned-char
+
+%:
+	dh $@ --buildsystem=rebar --with rebar

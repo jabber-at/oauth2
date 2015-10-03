@@ -1,0 +1,5 @@
+erlang-oauth2 (0.6.0+2015-09-28) unstable; urgency=low
+
+  * Initial release.
+
+ -- Mathias Ertl <mati@jabber.at>  Sat, 03 Oct 2015 15:40:09 +0200
