@@ -2,6 +2,7 @@ erlang-oauth2 (0.2015.09.11-0.1) unstable; urgency=low
 
   * This package now uses the original git repository from 
     https://github.com/kivra/oauth2, in line with what ejabberd uses.
+  * Fix section and homepage in debian/control.
 
  -- Mathias Ertl <mati@jabber.at>  Fri, 15 Jan 2016 23:13:03 +0100
 
