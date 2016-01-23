@@ -1,4 +1,7 @@
-# OAuth2 (v0.6.0)  [![BuildStatus](https://travis-ci.org/kivra/oauth2.png?branch=master)](https://travis-ci.org/kivra/oauth2)
+# P1 OAuth2
+
+[![Build Status](https://travis-ci.org/processone/p1_oauth2.svg?branch=master)](https://travis-ci.org/processone/p1_oauth2) [![Coverage Status](https://coveralls.io/repos/processone/p1_oauth2/badge.svg?branch=master&service=github)](https://coveralls.io/github/processone/p1_oauth2?branch=master) [![Hex version](https://img.shields.io/hexpm/v/p1_oauth2.svg "Hex version")](https://hex.pm/packages/p1_oauth2)
+
 This library is designed to simplify the implementation of the server side
 of OAuth2 (http://tools.ietf.org/html/rfc6749). It provides
 **no** support for developing clients. See
