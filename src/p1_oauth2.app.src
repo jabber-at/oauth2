@@ -17,14 +17,24 @@
 %%% @end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{application, oauth2,
+{application, p1_oauth2,
  [
   {description, "Erlang OAuth 2.0 implementation"},
-  {vsn, "0.6.0"},
+  {vsn, "0.6.1"},
   {registered, []},
   {applications, [
                   kernel,
                   stdlib
                  ]},
   {env, []}
- ]}.
+
+
+  %% hex.pm packaging:
+  {licenses, ["MIT", "Apache 2.0"]},
+  {maintainers, ["ProcessOne"]},
+  {links, [{"Github", "https://github.com/processone/p1_oauth2"}]}]}.
+
+%% Local Variables:
+%% mode: erlang
+%% End:
+%% vim: set filetype=erlang tabstop=8:
