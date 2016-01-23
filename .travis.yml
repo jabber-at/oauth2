@@ -8,7 +8,7 @@ before_install:
 install:
   - rebar -C rebar.test.config get-deps
 
-script: rebar compile xref && rebar -C rebar.test.config eunit skip_deps=true
+script: rebar -C rebar.test.config compile xref && rebar -C rebar.test.config eunit skip_deps=true
 
 otp_release:
   - 17.1
