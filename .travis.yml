@@ -1,18 +1,20 @@
+sudo: false
+
 language: erlang
+
+before_install:
+  - pip install --user cpp-coveralls coveralls-merge
+
+install:
+  - rebar -C rebar.test.config get-deps
+
+script: rebar compile xref && rebar -C rebar.test.config eunit skip_deps=true
+
 otp_release:
-  - 18.0
-  - 17.5
-  - 17.4
-  - 17.3
   - 17.1
-  - 17.0
-  - R16B03-1
-  - R16B03
-  - R16B02
-  - R16B01
-  - R16B
-  - R15B03
-  - R15B02
-  - R15B01
-  - R15B
-script: make ct
+  - 17.5
+  - 18.1
+
+after_success:
+  - coveralls --exclude lib --exclude tests --gcov-options '\-lp' --dump c.json
+  - coveralls-merge c.json erlang.json
