@@ -3,7 +3,7 @@ Maintainer: Mathias Ertl <mati@jabber.at>
 Section: libs
 Priority: optional
 Standards-Version: 3.9.6
-Homepage: https://github.com/kivra/oauth2
+Homepage: https://github.com/processone/p1_oauth2
 Build-Depends: debhelper (>= 9), dpkg-dev (>= 1.16.1~), erlang-dev (>= 1:13.b.4),
  dh-rebar, erlang-eunit, erlang-proper-dev, erlang-syntax-tools, erlang-meck
 Vcs-Git: https://github.com/jabber-at/oauth2.git
