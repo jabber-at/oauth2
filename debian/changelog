@@ -3,6 +3,7 @@ erlang-oauth2 (1:0.6.1-0.1) unstable; urgency=low
   * This package now uses the p1 fork from 
     https://github.com/processone/p1_oauth2, in line with what ejabberd uses.
   * Fix section and homepage in debian/control and debian/copyright.
+  * Conflict with ejabberd << 1:16.02
 
  -- Mathias Ertl <mati@jabber.at>  Wed, 09 Mar 2016 17:17:39 +0100
 

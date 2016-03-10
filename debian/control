@@ -13,6 +13,7 @@ Package: erlang-oauth2
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
  erlang-base-hipe | erlang-base | ${erlang-abi:Depends}, ${erlang:Depends}
+Conflicts: ejabberd (<< 1:16.02)
 Description: OAuth2 erlang helper library
  This library is designed to simplify the implementation of the server side of
  OAuth2 (http://tools.ietf.org/html/rfc6749). It provides no support for
