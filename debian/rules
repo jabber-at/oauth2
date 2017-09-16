@@ -6,5 +6,6 @@ include /usr/share/dpkg/default.mk
 
 DESTDIR=$(CURDIR)/debian/erlang-p1-oauth2
 
+
 %:
 	dh $@ --buildsystem=rebar --with rebar

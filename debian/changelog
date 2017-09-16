@@ -1,8 +1,9 @@
 erlang-oauth2 (1:0.6.1-0.2) unstable; urgency=low
 
-  * Merge changes from upstream package:
+  * Use upstream versions of several files:
 
-    * Use upstream version of debian/rules.
+    * debian/rules
+    * debian/watch
 
  -- Mathias Ertl <mati@jabber.at>  Wed, 09 Mar 2016 17:17:39 +0100
 
