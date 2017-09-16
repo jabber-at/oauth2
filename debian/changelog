@@ -5,6 +5,10 @@ erlang-oauth2 (1:0.6.1-0.2) unstable; urgency=low
     * debian/rules
     * debian/watch
 
+  * Merge changes from upstream config files:
+    
+    * debian/copyright
+
  -- Mathias Ertl <mati@jabber.at>  Wed, 09 Mar 2016 17:17:39 +0100
 
 erlang-oauth2 (1:0.6.1-0.1) unstable; urgency=low
