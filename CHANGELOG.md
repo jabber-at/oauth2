@@ -1,3 +1,8 @@
+# Version 0.6.2
+
+* Make tests works with erlang R20
+* Fix Travis-CI compilation
+
 # Version 0.6.1
 
 * Repository is now forked to p1_oauth2 for consistency (Mickaël Rémond)
