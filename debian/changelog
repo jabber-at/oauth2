@@ -1,12 +1,7 @@
 erlang-p1-oauth2 (1:0.6.2-0.1) unstable; urgency=medium
 
   * New upstream release.
-
- -- Mathias Ertl <mati@jabber.at>  Sat, 16 Sep 2017 13:30:40 +0200
-
-erlang-p1-oauth2 (1:0.6.1-0.2) unstable; urgency=low
-
-  * Rename package to erlang-p1-oauth2, like in Debian.
+  * Rename package to erlang-p1-oauth2, following the same change in Debian.
   * Use upstream versions of several files:
 
     * debian/rules
@@ -17,7 +12,7 @@ erlang-p1-oauth2 (1:0.6.1-0.2) unstable; urgency=low
     * debian/copyright
     * debian/control
 
- -- Mathias Ertl <mati@jabber.at>  Wed, 09 Mar 2016 17:17:39 +0100
+ -- Mathias Ertl <mati@jabber.at>  Sat, 16 Sep 2017 13:30:40 +0200
 
 erlang-oauth2 (1:0.6.1-0.1) unstable; urgency=low
 
