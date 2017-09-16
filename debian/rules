@@ -1,9 +1,10 @@
 #!/usr/bin/make -f
+#export DH_VERBOSE=1
 
-CFLAGS:= $(shell dpkg-buildflags --get CFLAGS) $(CPPFLAGS)
-CFLAGS += -fsigned-char
-CXXFLAGS:= $(shell dpkg-buildflags --get CXXFLAGS) $(CPPFLAGS)
-CXXFLAGS += -fsigned-char
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+include /usr/share/dpkg/default.mk
+
+DESTDIR=$(CURDIR)/debian/erlang-p1-oauth2
 
 %:
 	dh $@ --buildsystem=rebar --with rebar
