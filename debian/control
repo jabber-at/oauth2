@@ -1,16 +1,24 @@
 Source: erlang-p1-oauth2
+Maintainer: Mathias Ertl <mati@jabber.at>
 Section: libs
 Priority: optional
-Maintainer: Mathias Ertl <mati@jabber.at>
-Build-Depends: debhelper (>= 9), dh-rebar, erlang-base, erlang-crypto, erlang-eunit, erlang-proper-dev, erlang-meck (>= 0.8.7)
-Standards-Version: 4.1.0
-Homepage: https://github.com/processone/p1_oauth2
+Build-Depends: debhelper (>= 9),
+               dh-rebar,
+               erlang-base (>= 1:17.5),
+               erlang-crypto,
+               erlang-eunit,
+               erlang-proper-dev,
+               erlang-meck (>= 0.8.7)
+Standards-Version: 4.1.4
 Vcs-Git: https://github.com/jabber-at/oauth2.git
 Vcs-Browser: https://github.com/jabber-at/oauth2
+Homepage: https://github.com/processone/p1_oauth2
 
 Package: erlang-p1-oauth2
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, erlang-base | ${erlang-abi:Depends},
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         erlang-base (>= 1:17.5) | ${erlang-abi:Depends},
          ${erlang:Depends}
 Breaks: erlang-oauth2
 Replaces: erlang-oauth2
