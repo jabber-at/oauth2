@@ -1,3 +1,7 @@
+# Version 0.6.3
+
+* Remove last remainig crypto:rand\_bytes() usage
+
 # Version 0.6.2
 
 * Make tests works with erlang R20
